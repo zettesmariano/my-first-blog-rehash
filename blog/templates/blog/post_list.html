@@ -7,17 +7,13 @@
 	<div>
 		<h1><a href="/">Ruzette the Django Girl Blog</a></h1>
 	</div>
-	<div>
-		<p>Published: 17.05.2018, 10:57</p>
-		<h2><a href="">My first post</a></h2>
-		<p>Lorem ipsum eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi prota favidaat. Fusce dapibu, tellus ac cursus commodo, torotr mauris condimentum nibh, ut fermataum massa jsto sit amet risus.</p>
-	</div>
-
-	<div>
-		<p>Published: 17.05.2018, 11:00</p>
-		<h2><a href="">My second post</a></h2>
-		<p>Lorem ipsum eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi prota favidaat. Fusce dapibu, tellus ac cursus commodo, torotr mauris condimentum nibh, ut fermataum massa jsto sit amet risus.</p>
-	</div>
+	{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date}}</p>
+			<h1><a href="">{{ post.title}}</a></h1>
+			<p>{{ post.text|linebreaksbr}}</p>
+		</div>
+	{% endfor %}
 
 	<p>Hi there!</p>
 	<p>It works!</p>
